@@ -38,3 +38,8 @@ function sumTwoSmallestNumbers(numbers) {
   sumTwoSmallestNumbers([4, 3, 2, 1]);  // 3
   sumTwoSmallestNumbers([8, 7, 6, 5]);  // 11
   //commit test
+
+// Сумма квадратов
+  function squareSum(numbers) {
+    return numbers.reduce( (acc, cur) => acc + (cur **2), 0)
+}
