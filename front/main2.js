@@ -42,4 +42,10 @@ function sumTwoSmallestNumbers(numbers) {
 // Сумма квадратов
   function squareSum(numbers) {
     return numbers.reduce( (acc, cur) => acc + (cur **2), 0)
-}
+  }
+
+    // merging identical letters
+    var myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
+    console.log(myStr)
+
+    
