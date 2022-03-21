@@ -116,6 +116,7 @@ const myCity = {
 }
 
 myCity.cityGreeting()
+
 // Сокращённый вариант объявления функции
 const myCity = {
     city: 'New York',
@@ -126,4 +127,5 @@ const myCity = {
 
 myCity.cityGreeting()
 
+//Комментарий
 
