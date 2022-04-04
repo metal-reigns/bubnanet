@@ -149,8 +149,8 @@ const person = {
 
 const person2 = person
 
-person.age = 26
-person.isAdult = true
+person2.age = 26
+person2.isAdult = true
 
 console.log(person.age) // 26
 console.log(person.isAdult) // true
@@ -199,3 +199,32 @@ person2.name = 'Ksenya'
 
 console.log(person2.name) // Ksenya
 console.log(person.name) // Anton
+
+//Функции
+
+ let a = 5
+ let b = 3
+
+ function sum(a, b) {
+     const c = a + b
+     console.log(c)
+ }
+
+ sum(a, b) // 8
+
+ a = 8
+ b = 12
+
+ sum(a, b) // 20
+
+ //
+
+ function myFn(a, b) {
+     let c
+     a += 1
+     c = a + b
+     return c
+ }
+
+ console.log(myFn(5, 6))
+ console.dir(myFn)
