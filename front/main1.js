@@ -228,3 +228,74 @@ console.log(person.name) // Anton
 
  console.log(myFn(5, 6))
  console.dir(myFn)
+
+ // Передача значения по ссылке
+
+ const personOne = {
+     name: 'Bob',
+     age: 21,
+     lol: 2
+ }
+
+ function increasePersonAge(person) { // Функция мутирует внешний объект
+     person.lol += 1
+     return person
+ }
+
+ increasePersonAge(personOne) // Передача объекта по ссылке
+ console.log(personOne.lol)
+
+ // Создание копий объекта без мутации
+
+ const personOne = {
+     name: 'Bob',
+     age: 21
+ }
+
+ function increasePersonAge(person) {
+     const updatedPerson = Object.assign({}, person)
+     updatedPerson.age += 1
+     return updatedPerson
+ }
+
+ const updatedPersonOne = increasePersonAge(personOne)
+ console.log(personOne.age) //21
+ console.log(updatedPersonOne.age) // 22
+
+ // Колбэк функции
+
+ function printMyName() {
+     console.log('Anton')
+ }
+
+ setTimeout(printMyName, 1000) 
+
+// Цепочка областей видимости
+
+const a = 5
+
+function myFn() {
+    function innerFn() {
+        console.log(a) // 5
+    }
+    innerFn()
+}
+
+console.log(myFn())
+
+// Жизненный цикл
+
+let a // 1) объявление а  в глобальной области видимости. Её значение undefined
+let b // 1) объявление b  в глобальной области видимости. Её значение undefined
+
+function myFn() {
+    let b // объявление b в зоне видимости функции
+    a = true // 3) объявлена ли а в зоне видимости функции? НЕТ - во внешней области? ДА - Присваение значения true глобальной переменной
+    b = 10 // 3)объявлена ли b в рамках функции? ДА - присвоение этой переменной значение 10
+    console.log(b) // 10 - это значение в области видимости функции!!!
+}
+
+myFn() // 2) Вызов функции myFn
+
+console.log(a) // 4) переменная имеет значение true
+console.log(b) // undefined - всё также имеет значение undefined в глобальной видимости, где она вызвана
