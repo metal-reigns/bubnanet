@@ -127,5 +127,75 @@ const myCity = {
 
 myCity.cityGreeting()
 
-//Комментарий
+//Мутация объектов
 
+const person = {
+    name: 'Anton',
+    age: 21
+}
+
+person.age = 22
+person.isAdult = true
+
+console.log(person.age) // 22
+console.log(person.isAdult) // true
+
+// Мутирование копий
+
+const person = {
+    name: 'Anton',
+    age: 25
+}
+
+const person2 = person
+
+person.age = 26
+person.isAdult = true
+
+console.log(person.age) // 26
+console.log(person.isAdult) // true
+
+// Как избежать мутаций?
+// Вариант 1 - Object.assign({}, person)
+
+const person = {
+    name: 'Anton',
+    age: 25
+}
+
+const person2 = Object.assign({}, person)
+
+person2.age = 26
+
+console.log(person2.age) //26
+console.log(person.age) //25
+
+// Вариант 2
+// const person2 = {...person}
+
+const person = {
+    name: 'Anton',
+    age: 25
+}
+
+const person2 = {...person}
+
+person2.name = 'Ksenya'
+
+console.log(person2.name) //Ksenya
+console.log(person.name) // Anton
+
+//Вариант 3
+// const person2 = JSON.parse(JSON.stringify(person))
+
+const person = {
+    name: 'Anton',
+    age: 25
+}
+
+const person2 = JSON.parse(JSON.stringify(person))
+
+person2.name = 'Ksenya'
+
+console.log(person2.name) // Ksenya
+console.log(person.name) // Anton
