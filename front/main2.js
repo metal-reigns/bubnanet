@@ -47,5 +47,12 @@ function sumTwoSmallestNumbers(numbers) {
     // merging identical letters
     var myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
     console.log(myStr)
+//Регулярне выражение
 
-    
+    const str1 = "the cat says meow";
+    const str2 = "the dog says bark";
+    const hasCat = /cat/;
+    hasCat.test(str1);
+    // true
+    hasCat.test(str2);
+    // false
