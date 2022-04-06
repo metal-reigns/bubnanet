@@ -280,8 +280,8 @@ function myFn() {
     }
     innerFn()
 }
+ myFn()
 
-console.log(myFn())
 
 // Жизненный цикл
 
@@ -300,5 +300,40 @@ myFn() // 2) Вызов функции myFn
 console.log(a) // 4) переменная имеет значение true
 console.log(b) // undefined - всё также имеет значение undefined в глобальной видимости, где она вызвана
 
+//Пример плохого кода
+'use strict'
 
+function myFn() {
+    a = true
+    console.log(a)
+}
 
+myFn() // true
+
+console.log(a) // true
+
+a = 10
+console.log(typeof a)
+console.log(typeof a === 'number')
+
+a = ''
+b = 'Tony'
+console.log(a || b)
+
+let b = 10
+b && console.log('Execute') // Execute
+//
+let b 
+b && console.log('Execute') // undefined
+
+const button = {
+    width" 200,
+    text: 'Buy'
+}
+
+const redButton = {
+    ...button
+    color: 'red'
+}
+
+console.table(redButton)
