@@ -325,15 +325,97 @@ b && console.log('Execute') // Execute
 //
 let b 
 b && console.log('Execute') // undefined
-
+// Оператор разложения на свойства ...
 const button = {
-    width" 200,
+    width:'200',
     text: 'Buy'
 }
 
 const redButton = {
-    ...button
+    ...button,
     color: 'red'
 }
 
 console.table(redButton)
+
+const button = {
+    width:'200',
+    text: 'Buy',
+    color: 'green'
+}
+
+const redButton = {
+    ...button,
+    color: 'red'
+}
+
+const blackButton = {
+    color: 'black',
+    ...button
+}
+
+console.table(button) // red
+console.table(redButton) // green
+console.table(blackButton) // green
+
+// Соединение двух объектов оператором ...
+
+const buttonInfo = {
+    text: 'Buy'
+}
+
+const buttonStyle = {
+    color: 'yellow',
+    width: 200,
+    height: 300
+}
+
+const button = {
+    ...buttonInfo,
+    ...buttonStyle
+}
+
+console.table(button)
+
+// Конкатенация строк
+
+const hello = 'Hello'
+const world = 'World'
+
+const greetin = hello + ' ' + world
+console.log(hello + ' ' + world)
+console.log(greetin)
+
+ // Шаблонные строки
+
+const hello = 'Hello'
+const world = 'World'
+
+const greetin = `${hello} ${world}`
+console.log(greetin)
+
+const name = 'Anton'
+const city = 'Minsk'
+
+console.log(`Меня зовут ${name} и Я из ${city}а`)
+
+// Функциональное выражение
+
+setTimeout(function() {
+    console.log('Отложенное сообщение')
+}, 1000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
