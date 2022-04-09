@@ -405,17 +405,137 @@ setTimeout(function() {
     console.log('Отложенное сообщение')
 }, 1000)
 
+// Стрелочная функция
 
+setTimeout(()=>{
+    console.log('Отложенное сообщение')
+}, 1000)
 
+// Значение параметров по умолчанию
 
+const multByFactor = (value, multiplier = 1) => {
+    return value * multiplier
+}
 
+console.log(multByFactor(10, 2)) // 20
+console.log(multByFactor(5)) // 5
 
+//
 
+const newPost = (post, addedAt = Date()) => ({
+    ...post,
+    addedAt
+})
 
+const firstPost = {
+    id: 1,
+    author: 'Anton'
+}
 
+console.log(newPost(firstPost))
 
+// TRY/CATCH
 
+const fnWithError = () => {
+    throw new Error('Some error')
+}
 
+try {
+    fnWithError()
+} catch (error) {
+    console.error(error)
+    console.log(error.message)
+}
 
+console.log('continue...')
 
+// Массивы
+
+const myArray = [1, 2, 3, 4]
+console.log(myArray) // [1, 2, 3, 4]
+console.log(myArray.length) // 4
+
+myArray[2] = 'abc'
+
+console.log(myArray) // [1, 2, 'abc', 4]
+console.log(myArray[2]) // 'abc'
+
+myArray[4] = true // Добавление 5 элемента в массив
+
+console.log(myArray) // [1, 2, 'abc', 4, true]
+console.log(myArray.length) // 5
+
+// PUSH
+
+myArray = [1, 2, 3]
+console.log(myArray) // [1, 2, 3]
+
+myArray.push(4)
+
+console.log(myArray) // [1, 2, 3, 4]
+
+myArray.push(true)
+
+console.log(myArray) // [1, 2, 3, 4, true]
+
+// POP 
+
+myArray = [1, 2, 3]
+console.log(myArray) // [1, 2, 3]
+
+myArray.pop()
+
+console.log(myArray) // [1, 2]
+
+const removeElement = myArray.pop()
+
+console.log(myArray) // [1]
+console.log(removeElement) // 2
+
+// UNSHIFT Добавление элемента в начале массива
+
+const myArray = [1, 2, 3]
+console.log(myArray) // [1, 2, 3]
+
+myArray.unshift(true)
+
+console.log(myArray) // [true, 1, 2, 3]
+
+myArray.unshift('abc')
+
+console.log(myArray) // ['abc', true, 1, 2, 3]
+
+// SHIFT метод удаления первого элемента массива
+
+const myArray = [1, 2, 3]
+console.log(myArray) // [1, 2, 3]
+
+myArray.shift()
+
+console.log(myArray) // [2, 3]
+
+const removeElement = myArray.shift()
+
+console.log(myArray) // [3]
+console.log(removeElement) // 2  
+
+// FOREACH
+
+ const myArray = [1, 2, 3]
+ console.log(myArray) // [1, 2, 3]
+
+ const forEachArray = myArray.forEach(el => console.log(el * 2))
+
+ console.log(myArray) // [1, 2, 3] Оригинальный массив не изменился 
+ console.log(forEachArray) // undefined
+// MAP
+
+const myArray = [1, 2, 3]
+console.log(myArray) 
+
+const newArray = myArray.map(el => el * 3)
+
+console.log(newArray) // [3, 6, 9] - формирует новый массив, в отличии от forEach
+console.log(myArray) // [1, 2, 3]
+//Оригинальный массив не изменился
 
