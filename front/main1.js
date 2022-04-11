@@ -539,3 +539,80 @@ console.log(newArray) // [3, 6, 9] - формирует новый массив,
 console.log(myArray) // [1, 2, 3]
 //Оригинальный массив не изменился
 
+// Дестрцутизация объектов
+
+const userProfile = {
+    name: 'Anton',
+    commentsQty: 23,
+    hasSignedAgreement: false
+}
+
+const { name, commentsQty } = userProfile
+const { hasSignedAgreement } = userProfile
+
+console.log(name) // Anton
+console.log(commentsQty) // 23
+
+// Деструктуризация массивов
+
+const fruits = [ 'Apple', 'Banana' ]
+
+const [fruitOne, FruitTwo] = fruits
+
+console.log(fruitOne) // Apple
+console.log(FruitTwo) // Banana  
+
+// Деструктуризация в функциях
+
+const userProfile = {
+    name: 'Anton',
+    commentsQty: 23,
+    hasSignedAgreement: false
+}
+
+const userInfo = ({ name, commentsQty}) => {
+    if (!commentsQty) {
+        return `User ${name} has no comments`
+    }
+
+        return `User ${name} has ${commentsQty} comments`
+    }
+    console.log(userInfo(userProfile)) // User Anton has 23 comments
+
+    // ИНСТРУКЦИЯ IF 
+
+    const person = {
+        age: 20,
+        name: ''
+    }
+
+    if (!person.name) {
+        console.log('Имя не указано')
+    }
+
+    // Инструкция IF ELSE и IF ELSE IF
+
+    const age = 25
+
+    if (age > 18) {
+        console.log('is adult')
+    } else if (age >= 23) {
+        console.log('is teenager')
+    } else {
+        console.log('is child')
+    }
+
+    //
+
+    const age = 25
+
+    if (age > 18) {
+        console.log('is adult')
+    }
+    
+    if (age >= 12) {
+        console.log('is teenager')
+    }
+    if (age < 12) {
+        console.log('is child')
+    }
