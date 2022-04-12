@@ -766,3 +766,18 @@ const userInfo = ({ name, commentsQty}) => {
     /* x 10
     y true
     z abc */
+
+    const myObject = {
+        x: 10,
+        y: true,
+        z: 'abc'
+    }
+
+    Object.values(myObject).forEach(value => { // Получение всех значений свойств объекта в виде массива
+        console.log(value)
+    })
+    // . перед forEach - это метод над объектм myObject
+
+    // Ojbect.keys({name: 'Anton', isStudent: true})  - //  ['name, 'isStudent']
+    // Ojbect.values({name: 'Anton', isStudent: true})  - //  ['Anton, 'true']
+    
