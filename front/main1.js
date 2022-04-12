@@ -616,3 +616,153 @@ const userInfo = ({ name, commentsQty}) => {
     if (age < 12) {
         console.log('is child')
     }
+
+    // Использование IF в функциях
+
+    const sumPositiveNumbers = (a, b) => {
+        if (typeof a !== 'number' || typeof b !== 'number') {
+            return 'One of the arguments is not a number'
+        }
+        
+        if (a <= 0 || b <= 0) {
+            return 'Number are not positive'
+        }
+        
+        return a + b
+    }
+
+    console.log(sumPositiveNumbers(5, 3))
+
+    // Прмер SWITCH
+
+    const month = 2
+
+    switch (month) {
+        case 12:
+            console.log('Декабрь')
+            break
+        case 1:
+            console.log('Январь')
+            break
+        case 2:
+            console.log('Февраль')
+            break
+        default:
+            console.log('Это не зимний месяц')
+    }
+
+    // Тернарный оператор
+
+    const value = 11
+
+    value
+        ? console.log('Условие истинно')
+        : console.log('Условие ложно')
+
+    //
+
+    const value1 = 11
+    const value2 = 25
+
+    value1 && value2
+        ? myFunction(value1, value2)
+        : myFunction()
+
+    //
+
+    let value = 11
+    console.log(value >=0 ? value : -value) // 11
+
+    let value = -5
+    const res = value >= 0 ? value : -value)
+    console.log(res) // 5
+
+    // ЦИКЛ FOR
+
+    for (i = 0; i < 5; i++) {
+        console.log(i)
+    }
+
+    // ЦИКЛ FOR ДЛЯ МАССИВОВ
+
+    const myArray = ['first', 'second', 'third']
+
+    for (let i = 0; i < myArray.length; i++) {
+        console.log(myArray[i])
+    }
+
+    // МЕТОД МАССИВОВ forEach
+
+    const myArray = ['first', 'second', 'third']
+
+    myArray.forEach((element, index) => {
+        console.log(element, index)
+    })  
+        // 'first'  0
+        // 'second' 1
+        // 'third'  2
+
+    // ЦИКЛ WHILE
+
+    let i = 0
+
+    while (i < 5) {
+        console.log(i)
+        i++
+    }
+
+    // БЕСКОНЕЧНЫЙ ЦИКЛ
+
+    let i = 0
+
+    while (i < 5) {
+        console.log(i)
+    }
+
+    // ЦИКЛ DO WHILE
+
+    let i = 0
+
+    do {
+        console.log(i)
+        i++
+    } while (i < 5)
+
+    //
+
+    let i = 10
+
+    do {
+        console.log(i)
+        i++
+    } while (i < 5) // выполнится 1 раз и выведет число 10
+
+    // ЦИКЛ FOR IN (работа с объектом)
+
+    const myObject = {
+        x: 10,
+        y: true,
+        z: 'abc'
+    }
+
+    for (const key in myObject) {
+        console.log(key, myObject[key])
+    }
+    /* x 10
+    y true
+    z abc */
+
+    // FOREACH ДЛЯ ОБЪЕКТОВ
+
+    const myObject = {
+        x: 10,
+        y: true,
+        z: 'abc'
+    }
+
+    Object.keys(myObject).forEach(key => { // Получение всех ключей объекта в виде массива
+        console.log(key, myObject[key])
+    })
+    /* x 10
+    y true
+    z abc */
