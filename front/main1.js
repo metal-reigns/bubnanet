@@ -780,4 +780,57 @@ const userInfo = ({ name, commentsQty}) => {
 
     // Ojbect.keys({name: 'Anton', isStudent: true})  - //  ['name, 'isStudent']
     // Ojbect.values({name: 'Anton', isStudent: true})  - //  ['Anton, 'true']
+
+    // FOR IN ДЛЯ МАССИВОВ
+
+    const myArray = [true, 10, 'abc', null]
+
+    for (const key in myArray) {
+        console.log(myArray[key])
+    }
+
+    // ЦИКЛ FOR OF (ES6)
+    // ДЛЯ СТРОК
+    const myString = 'Hey'
+
+    for (const letter of myString) {
+        console.log(letter)
+    } /*
+        H
+        e
+        y
+    */
+
+    // ДЛЯ МАССИВОВ
+
+    const myArray = [true, 10, 'abc', null]
+
+    for (const element of myArray) {
+        console.log(element)
+    }
+    // ДЛЯ МАССИВОВ ЛУЧШЕ ИСПОЛЬЗОВАТЬ FOREACH
+    /* !!! FOR OF НЕ ДЛЯ ОБЪЕКТОВ !!!
+    У объектов порядок свойств не важен, For of не знает как перебирать
+    свойства объекта, в какой последовательности это делать */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
