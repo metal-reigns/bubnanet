@@ -838,9 +838,34 @@ const userInfo = ({ name, commentsQty}) => {
     firstComment.upvote()
     console.log(firstComment.votesQty) // 2
 
+    // ПРОВЕРКА ПРИНАДЛЕЖНОСТИ СВОЙСТВ ЭКЗЕМПЛЯРУ ОБЪЕКТА
     
+    const firstComment = new Commnet('Firts comment')
 
+    firstComment.hasOwnProperty('text') // true
+    firstComment.hasOwnProperty('votesQty') // true
+    firstComment.hasOwnProperty('upvote') // false
+    firstComment.hasOwnProperty('hasOwnProperty') // false
 
+    // СОЗДАНИЕ НЕСКОЛЬКИХ ЭКЗЕМПЛЯРОВ
+
+    class Commnet {
+        constructor(text) {
+            this.text = text
+            this.votesQty = 0
+        }
+
+        upvote() {
+            this.votesQty += 1
+        }
+    }
+
+    const firstComment = new Commnet('First comment')
+    const secondComment = new Commnet('Second comment')
+    const thirdComment = new Comment('Third comment')
+
+    thirdComment.upvote()
+    console.log(thirdComment.votesQty)
 
 
 
