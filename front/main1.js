@@ -813,6 +813,32 @@ const userInfo = ({ name, commentsQty}) => {
     У объектов порядок свойств не важен, For of не знает как перебирать
     свойства объекта, в какой последовательности это делать */ 
 
+    // КЛАССЫ И ПРОТОТИПЫ
+
+    class Commnet {
+        constructor(text) {
+            this.text = text
+            this.votesQty = 0
+        }
+
+        upvote() {
+            this.votesQty += 1
+        }
+    }
+
+    const firstComment = new Commnet('First comment')
+
+    console.log(firstComment)
+
+    console.log(firstComment instanceof Commnet) // true
+    console.log(firstComment instanceof Object) // true
+
+    firstComment.upvote()
+    console.log(firstComment.votesQty) // 1
+    firstComment.upvote()
+    console.log(firstComment.votesQty) // 2
+
+    
 
 
 
