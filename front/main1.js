@@ -867,10 +867,55 @@ const userInfo = ({ name, commentsQty}) => {
     thirdComment.upvote()
     console.log(thirdComment.votesQty)
 
+    // РАСШИРЕНИЕ ДРУГИХ КЛАССОВ
 
+    class NumbersArray extends Array {
+        sum(){
+            return this.reduce((el, acc) => acc += el, 0)
+        }
+    }
 
+    const myArray = new NumbersArray(2, 5, 7)
 
+    console.log(myArray)
+    console.log(myArray.sum())
 
+    // СОЗДАНИЕ ПРОМИСА
+
+    const myPromise = new Promise ((resolve, reject) => {
+        /*
+        * Выполнение асинхронных действий
+        *
+        * Внутри этой функции нужно в результате вызвать 
+        * одну из функций resolve или reject
+        */
+    }); // Вновь созданный промис будет в состоянии pending
+    
+    // Получение результата промиса
+
+    myPromise
+    .then(value => {
+        /**
+         * Действие в случае успешного исполнения Промиса
+         * Значение value - это значение, переданное в вызове
+         * функции resolve внутри Промиса
+         */
+    })
+    .catch(error => {
+        /**
+         * Действие в случае отклонения Промиса
+         * Значение error - это значение, переданное в вызове
+         * функции reject внутри Промиса
+         */
+    })
+
+    fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => {
+            console.log(response)
+            return response.json()
+        })
+        .then(json => console.log(json))
+        .catch(error => console.error(error))
 
 
 
